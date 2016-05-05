@@ -1,0 +1,8 @@
+version: '2'
+services:
+    stu_jhipster-sonar:
+        container_name: stu_jhipster-sonar
+        image: sonarqube:5.3
+        ports:
+            - 9000:9000
+            - 9092:9092

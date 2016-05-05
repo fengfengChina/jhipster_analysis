@@ -1,0 +1,15 @@
+version: '2'
+services:
+    stu_jhipster-app:
+        image: stu_jhipster
+        external_links:
+            - stu_jhipster-mysql:mysql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/stu_jhipster?useUnicode=true&characterEncoding=utf8&useSSL=false
+        ports:
+            - 8080:8080
+    stu_jhipster-mysql:
+        extends:
+            file: mysql.yml
+            service: stu_jhipster-mysql
